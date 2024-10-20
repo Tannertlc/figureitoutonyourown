@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Animation with Two GIFs</title>
+    <style>
+        /* Styling for the text */
+        .flicker-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 60px;
+            color: #FF0000;
+            text-align: center;
+            margin-top: 20%;
+            animation: flicker 2s infinite;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Flicker animation for text */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0;
+            }
+        }
+
+        /* Styling for the first fireworks GIF, centered */
+        .fireworks {
+            position: absolute;
+            top: 50%; /* Centered vertically */
+            left: 50%; /* Centered horizontally */
+            transform: translate(-50%, -50%); /* Ensure proper centering */
+            background: url('https://media.giphy.com/media/oIY5zfbRGZ80c2a3TN/giphy.gif') no-repeat center center;
+            background-size: cover;
+            width: 400px;
+            height: 300px;
+            animation: firework 3s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        /* Firework animation for the first GIF */
+        @keyframes firework {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        /* Styling for Tenor GIF container */
+        .tenor-container {
+            position: absolute;
+            top: calc(60% - 60px); /* Raise it up by 60px (same as font size) */
+            left: calc(10% - 60px); /* Move it slightly more to the left */
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 300px; /* Adjust the size as needed */
+        }
+    </style>
+</head>
+<body>
+    <!-- First Fireworks GIF (Now Centered) -->
+    <div class="fireworks"></div>
+
+    <!-- Tenor GIF Embed (Pointing Finger) -->
+    <div class="tenor-container">
+        <div class="tenor-gif-embed" data-postid="20667512" data-share-method="host" data-aspect-ratio="0.73125" data-width="100%">
+            <a href="https://tenor.com/view/pointing-finger-pointing-inspekthor-gif-20667512">Pointing Finger Pointing GIF</a> from 
+            <a href="https://tenor.com/search/pointing+finger-gifs">Pointing Finger GIFs</a>
+        </div> 
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+
+    <!-- Flickering text -->
+    <div class="flicker-text">figure it out on your own</div>
+</body>
+</html>
